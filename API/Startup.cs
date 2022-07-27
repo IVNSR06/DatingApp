@@ -1,3 +1,4 @@
+using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -16,7 +17,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         
-        services.AddDbContext<DbContext>(options =>
+        services.AddDbContext<DataContext>(options =>
         {
             options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
         });
